@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\project",
+    "\\src\\app\\components\\task",
+    "\\src\\app\\components\\to-do-list",
+    "\\src\\app\\models",
+    "\\src\\app\\pipes",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\pipes\\filter-task-by-date.pipe.ts",
+  "PreviewInSolutionExplorer": false
+}

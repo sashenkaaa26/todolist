@@ -1,0 +1,72 @@
+<div class="item">
+  <div class="taskName">
+    <p [id]="task.name">
+      {{ task.name | capitalletter}}
+    </p>
+    <span (click)="description = !description" (click)="toggle()">
+      <p [ngClass]="{ invisible: !visibility }">&#709;</p>
+      <p [ngClass]="{ invisible: visibility }">&#94;</p>
+    </span>
+  </div>
+  <div *ngIf="description" class="info">
+    <p [id]="task.description">{{ task.description }}</p>
+    <p [id]="task.tags">{{ task.tags }}</p>
+  </div>
+  <div class="btn-wrapper" *ngIf="!editable">
+    <button class="btn" (click)="editable = !editable">Edit</button>
+    <button class="btn btn-warn" (click)="removeTask.emit()">Delete</button>
+  </div>
+  <div *ngIf="editable">
+    <input
+      class="sm-text-input"
+      placeholder="edit item"
+      [value]="task.name"
+      #editedTask
+      (keyup.enter)="saveTask(editedTask.value)"
+    />
+
+    <div class="btn-wrapper">
+      <button class="btn" (click)="editable = !editable">Cancel</button>
+      <button class="btn btn-save" (click)="saveTask(editedTask.value)">
+        Save
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="editable">
+    <input
+      class="sm-text-input"
+      placeholder="edit item"
+      [value]="task.description"
+      #editedTaskDescription
+      (keyup.enter)="saveDescription(editedTaskDescription.value)"
+    />
+
+    <div class="btn-wrapper">
+      <button class="btn" (click)="editable = !editable">Cancel</button>
+      <button
+        class="btn btn-save"
+        (click)="saveDescription(editedTaskDescription.value)"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="editable">
+    <input
+      class="sm-text-input"
+      placeholder="edit item"
+      [value]="task.tags"
+      #editedTaskTag
+      (keyup.enter)="saveTag(editedTaskTag.value)"
+    />
+
+    <div class="btn-wrapper">
+      <button class="btn" (click)="editable = !editable">Cancel</button>
+      <button class="btn btn-save" (click)="saveTag(editedTaskTag.value)">
+        Save
+      </button>
+    </div>
+  </div>
+</div>

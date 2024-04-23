@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Project1",
+    "tasks": [
+      {
+        "name": "morning",
+        "date": "2022-11-16T13:19:47.384Z",
+        "description": "Wake up, take a shower, cook breakfast, have breakfast",
+        "tags": "#morning",
+        "priority": 2
+      },
+      {
+        "name": "work",
+        "date": "2022-10-28T13:19:47.384Z",
+        "description": "Set tasks for the day and get to work",
+        "tags": "#work",
+        "priority": 4
+      },
+      {
+        "name": "eat",
+        "date": "2022-10-28T13:19:47.384Z",
+        "description": "Prepare a meal and do not forget to have dinner and lunch",
+        "tags": "#eat",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "name": "Project2",
+    "tasks": [
+      {
+        "name": "sport",
+        "date": "2022-10-28T13:19:47.384Z",
+        "description": "Exercise for at least half an hour a day",
+        "tags": "#sport",
+        "priority": 4
+      },
+      {
+        "name": "go to visit",
+        "date": "2022-10-28T13:19:47.384Z",
+        "description": "Go to visit grandma (buy a gift)",
+        "tags": "#gotovisit",
+        "priority": 5
+      },
+      {
+        "name": "cleaning",
+        "date": "2022-10-28T13:19:47.384Z",
+        "description": "General cleaning in the house",
+        "tags": "#cleaning",
+        "priority": 6
+      }
+    ]
+  },
+  {
+    "name": "Project3",
+    "tasks": [
+      {
+        "name": "grocery shopping trip",
+        "date": "2022-10-28T13:19:47.384Z",
+        "description": "go grocery shopping for a week",
+        "tags": "#shopping",
+        "priority": 7
+      },
+      {
+        "name": "dentist",
+        "date": "2022-10-28T13:19:47.384Z",
+        "description": "Trip to the dentist 7.11 at 10:00",
+        "tags": "#procedures",
+        "priority": 8
+      },
+      {
+        "name": "beauty procedures",
+        "date": "2022-10-28T13:19:47.384Z",
+        "description": "Make a manicure, pedicure, eyebrows, a trip to the beautician",
+        "tags": "#procedures",
+        "priority": 9
+      }
+    ]
+  }
+]
+

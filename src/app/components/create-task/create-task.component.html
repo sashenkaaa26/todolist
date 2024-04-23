@@ -1,0 +1,87 @@
+<h1>Create a new task</h1>
+<form [formGroup]="form"  (ngSubmit)="submit()" class="form">
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Task name"
+      formControlName="name"
+      class="forms-input"
+      #name
+      focus
+    />
+    <p
+      class="error"
+      *ngIf="form.controls['name'].invalid && form.controls['name'].touched"
+    >
+      Please fill field
+    </p>
+  </div>
+  <div class="form-group">
+    <input
+      type="date"
+      placeholder="Task date"
+      formControlName="date"
+      class="forms-input"
+      #date
+    />
+    <p
+      class="error"
+      *ngIf="form.controls['date'].invalid && form.controls['date'].touched"
+    >
+      Please fill field
+    </p>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Task description"
+      formControlName="description"
+      class="forms-input"
+      #description
+    />
+    <p
+      class="error"
+      *ngIf="
+        form.controls['description'].invalid &&
+        form.controls['description'].touched
+      "
+    >
+      Please fill field
+    </p>
+  </div>
+  <div class="form-group">
+    <input
+      type="number"
+      placeholder="Task priority"
+      formControlName="priority"
+      class="forms-input"
+      #priority
+    />
+    <p
+      class="error"
+      *ngIf="
+        form.controls['priority'].invalid && form.controls['priority'].touched
+      "
+    >
+      Please fill field
+    </p>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Task tags"
+      formControlName="tags"
+      class="forms-input"
+      #tags
+    />
+    <p
+      class="error"
+      *ngIf="form.controls['tags'].invalid && form.controls['tags'].touched"
+    >
+      Please fill field
+    </p>
+  </div>
+  <div class="form-group">
+    <button type="submit">Create</button>
+  </div>
+</form>

@@ -1,0 +1,56 @@
+<div class="project">
+  <div class="projectName">
+    <p [id]="project.name">
+      {{ project.name | capitalletter}}
+    </p>
+    <span (click)="showTasks = !showTasks"  (click)="toggle()">
+      <p [ngClass]="{ invisible: !visibility }">&#709;</p>
+      <p [ngClass]="{ invisible: visibility }">&#94;</p>
+    </span>
+  </div>
+  <div *ngIf="showTasks"    class="infoTask">
+    <div class="search">
+      <input
+        class="search-input searchTask"
+        type="text"
+        placeholder="Search task"
+        [(ngModel)]="search"
+      />
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/3963/3963073.png"
+        class="searchImg"
+      />
+    </div>
+    <div class="btn-primary-block">
+      <button class="btn-primary"  (click)="modalService.open('task', project)">
+        Add task
+      </button>
+    </div>
+    <ul>
+      <li *ngFor="let task of project.tasks | filterTaskByDate: filter | searchTask: search;  let i = index">
+        <app-task (removeTask)="removeTask(task)" [task]="task"></app-task>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-wrapper" *ngIf="!editable">
+    <button class="btn" (click)="editable = !editable">Edit</button>
+    <button class="btn btn-warn" (click)="remove.emit()">Delete</button>
+  </div>
+
+  <div *ngIf="editable">
+    <input
+      class="sm-text-input"
+      placeholder="edit item"
+      [value]="project.name"
+      #editedProject
+      (keyup.enter)="saveProject(editedProject.value)"
+    />
+
+    <div class="btn-wrapper">
+      <button class="btn" (click)="editable = !editable">Cancel</button>
+      <button class="btn btn-save" (click)="saveProject(editedProject.value)">
+        Save
+      </button>
+    </div>
+  </div>
+</div>

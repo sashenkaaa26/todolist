@@ -1,0 +1,22 @@
+<h1>Create a new project</h1>
+<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Project name"
+      formControlName="name"
+      class="forms-input"
+      #name
+      focus
+    />
+    <p
+      class="error"
+      *ngIf="form.controls['name'].invalid && form.controls['name'].touched"
+    >
+      Please fill field
+    </p>
+  </div>
+  <div class="form-group button">
+    <button type="submit">Create</button>
+  </div>
+</form>
